@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // let tel = '020-7777777'
+    // console.log(/(010|020)\-\d{7}/.test(tel)) //true
+    // let tel = '020-7777777'
+    // console.log(tel.match(/[123]/));
+
+    // let num  = '23.dddd'
+    // console.log(/\d+.d+/.test(num))
+    // let url = 'https://www.easd.com'
+    // console.log(/https?:\/\/www.\w+.(com|io)/.test(url))
+
+
+    // \s 表示空白
+    // let str = 'hello 2021 22222'
+    // console.log(str.match(/[^\D]+/g))
+
+    // \w表示字母数字下划线
+    const data = [
+        {
+            "id": 6,
+            "name": "皮肤",
+            "pid": 0,
+            "sort": 6,
+            "createNo": "9015",
+            "delFlag": false,
+            "createTime": "2017-07-22 16:06:11",
+            "updateTime": "2021-03-18 20:54:35"
+        },
+        {
+            "id": 9,
+            "name": "心脏",
+            "pid": 0,
+            "sort": 9,
+            "createNo": "9015",
+            "delFlag": false,
+            "createTime": "2017-07-22 16:06:11",
+            "updateTime": "2021-03-18 20:54:42"
+        },
+        {
+            "id": 5,
+            "name": "肾",
+            "pid": 0,
+            "sort": 5,
+            "createNo": "9015",
+            "delFlag": false,
+            "createTime": "2017-07-22 16:04:21",
+            "updateTime": "2021-03-18 20:54:32"
+        },
+        {
+            "id": 8,
+            "name": "骨骼",
+            "pid": 0,
+            "sort": 8,
+            "createNo": "9015",
+            "delFlag": false,
+            "createTime": "2017-07-22 16:04:21",
+            "updateTime": "2021-03-18 20:54:39"
+        },
+        {
+            "id": 4,
+            "name": "肺",
+            "pid": 0,
+            "sort": 4,
+            "createNo": "9015",
+            "delFlag": false,
+            "createTime": "2017-07-22 16:03:09",
+            "updateTime": "2021-03-18 20:54:30"
+        },
+        {
+            "id": 7,
+            "name": "血液循环",
+            "pid": 0,
+            "sort": 7,
+            "createNo": "9015",
+            "delFlag": false,
+            "createTime": "2017-07-22 16:03:09",
+            "updateTime": "2021-03-18 20:54:37"
+        },
+        {
+            "id": 3,
+            "name": "肝",
+            "pid": 0,
+            "sort": 3,
+            "createNo": "9015",
+            "delFlag": false,
+            "createTime": "2017-07-22 16:02:36",
+            "updateTime": "2021-03-18 20:54:28"
+        },
+        {
+            "id": 2,
+            "name": "脑",
+            "pid": 0,
+            "sort": 2,
+            "createNo": "9015",
+            "delFlag": false,
+            "createTime": "2017-07-22 16:00:28",
+            "updateTime": "2021-03-18 20:54:26"
+        },
+        {
+            "id": 1,
+            "name": "肠道",
+            "pid": 0,
+            "sort": 1,
+            "createNo": "9015",
+            "delFlag": false,
+            "createTime": "2008-05-13 15:39:24",
+            "updateTime": "2021-03-18 20:54:24"
+        }
+    ]
+
+    const quanbu = [
+        {
+            "diseasePid": 6,
+            "categoryDictCode": 307,
+            "categoryDictName": "梵蒂冈发点"
+        },
+        {
+            "diseasePid": 6,
+            "categoryDictCode": 360,
+            "categoryDictName": "12341啊"
+        },
+        {
+            "diseasePid": 7,
+            "categoryDictCode": 307,
+            "categoryDictName": "梵蒂冈发点"
+        },
+        {
+            "diseasePid": 7,
+            "categoryDictCode": 354,
+            "categoryDictName": "44444"
+        },
+        {
+            "diseasePid": 7,
+            "categoryDictCode": 367,
+            "categoryDictName": "分类删除测试"
+        },
+        {
+            "diseasePid": 9,
+            "categoryDictCode": 360,
+            "categoryDictName": "12341啊"
+        }
+    ]
+
+    const guke = [
+        {
+            "diseasePid": 6,
+            "categoryDictCode": 307,
+            "categoryDictName": "梵蒂冈发点"
+        },
+        {
+            "diseasePid": 9,
+            "categoryDictCode": 360,
+            "categoryDictName": "12341啊"
+        }
+    ]
+
+    const result2 = quanbu.map(v => {
+        return Object.assign(v, {flag: false})
+    }).map(v2 => {
+        guke.map(v3 => {
+            if (v2.categoryDictCode === v3.categoryDictCode) {
+                v2.flag = true
+            }
+        })
+        return v2
+    })
+
+
+    const result = data
+        .sort((a, b) => a.sort - b.sort)
+        .map(item => ({id: item.id, name: item.name, children: []}))
+        .map(item2 => {
+
+
+
+            let temp = result2.filter(i=>{
+                return i.diseasePid === item2.id
+            })
+            item2.children.push(temp)
+            return item2
+        })
+
+
+    console.log(result)
+</script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <h1 id="h1">hello</h1>
+</head>
+<body>
+<script>
+    const str = prompt('请输入内容')
+    h1.innerHTML = h1.innerHTML.replace(eval(`/${str}/`),value=>{
+        console.log(value)
+        return `<span style="color: red">${str}</span>`
+    })
+</script>
+</body>
+</html>
