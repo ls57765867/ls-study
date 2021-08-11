@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="990d432c-7add-462c-8374-2f1d9aadb287" name="默认的" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="JsFlowSettings">
+    <service-enabled>true</service-enabled>
+    <exe-path />
+    <other-services-enabled>true</other-services-enabled>
+    <auto-save>true</auto-save>
+  </component>
+  <component name="ProjectId" id="1wRwPvyp5bJUBzvMGwbZ4BATWet" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="js.linters.configure.manually.selectedeslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.standard" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.standard" value="" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="settings.javascript.linters.eslint" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="990d432c-7add-462c-8374-2f1d9aadb287" name="默认的" comment="" />
+      <created>1628434689037</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1628434689037</updated>
+      <workItem from="1628434690228" duration="5825000" />
+      <workItem from="1628559045250" duration="4936000" />
+    </task>
+    <task id="LOCAL-00001" summary="test">
+      <created>1628580468094</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1628580468094</updated>
+    </task>
+    <task id="LOCAL-00002" summary="test">
+      <created>1628580484088</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1628580484088</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="test" />
+    <option name="LAST_COMMIT_MESSAGE" value="test" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="718" y="340" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1628434700354">
+      <screen x="0" y="23" width="1792" height="1016" />
+    </state>
+    <state x="718" y="340" key="#com.intellij.fileTypes.FileTypeChooser/0.23.1792.1016@0.23.1792.1016" timestamp="1628434700354" />
+    <state x="641" y="367" key="Github.ShareDialog" timestamp="1628579931826">
+      <screen x="0" y="23" width="1792" height="1016" />
+    </state>
+    <state x="641" y="367" key="Github.ShareDialog/0.23.1792.1016@0.23.1792.1016" timestamp="1628579931826" />
+    <state x="501" y="271" key="Vcs.Push.Dialog.v2" timestamp="1628592635574">
+      <screen x="0" y="23" width="1792" height="1016" />
+    </state>
+    <state x="501" y="271" key="Vcs.Push.Dialog.v2/0.23.1792.1016@0.23.1792.1016" timestamp="1628592635574" />
+    <state x="718" y="452" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1628580550431">
+      <screen x="0" y="23" width="1792" height="1016" />
+    </state>
+    <state x="718" y="452" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.1792.1016@0.23.1792.1016" timestamp="1628580550431" />
+    <state x="561" y="248" width="670" height="676" key="search.everywhere.popup" timestamp="1628435970915">
+      <screen x="0" y="23" width="1792" height="1016" />
+    </state>
+    <state x="561" y="248" width="670" height="676" key="search.everywhere.popup/0.23.1792.1016@0.23.1792.1016" timestamp="1628435970915" />
+    <state x="739" y="329" key="svn.repositoryBrowser" timestamp="1628579824478">
+      <screen x="0" y="23" width="1792" height="1016" />
+    </state>
+    <state x="739" y="329" key="svn.repositoryBrowser/0.23.1792.1016@0.23.1792.1016" timestamp="1628579824478" />
+  </component>
+</project>

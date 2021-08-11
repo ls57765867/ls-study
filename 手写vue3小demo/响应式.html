@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+
+    /**
+     * 1.reactive收集
+     * 2.effect 中 执行track 函数收集放入 EffectStack
+     * 3.trigger 中第一次：weakMap中没有数据 创建 weakMap->depMap->deps 收集effectStack 中的副作用
+     * 4.删除副作用
+     * 5.第二次修改 触发 trigger 根据 target，key 拿到 deps中的一个个effect执行 （估计patch 也就是vue2中的notify也是从这里开始的）
+     * */
+    const reactive = function (obj) {
+        if (typeof obj !== 'object') return false
+        return new Proxy(obj, {
+            get(target, key) {
+                console.log('get了一下', key)
+                const value = Reflect.get(target, key)
+                track(target, key)
+                return typeof value === 'object' ? reactive(value) : value
+            },
+            set(target, key, value) {
+                console.log('set了一下', key, '数值为', value)
+                const ret = window.Reflect.set(target, key, value)
+                trigger(target, key, value)
+                return ret
+            },
+            deleteProperty(target, key) {
+                console.log('del了一下', key)
+                const ret = window.Reflect.deleteProperty(target, key)
+                return ret
+            }
+        })
+    }
+
+
+    let watchEffectStack = []
+    const watchEffect = (cb) => {
+        const e = createdReactiveWatchEffect(cb)
+        e()
+    }
+
+    const createdReactiveWatchEffect = (cb) => {
+
+        const effect = () => {
+            try {
+                watchEffectStack.push(cb)
+                cb()
+            } finally {
+                watchEffectStack.pop()
+            }
+        }
+
+        return effect
+    }
+
+    //呵呵
+
+    let targetMap = new WeakMap()
+    const track = function (target, key) {
+        const effect = watchEffectStack[watchEffectStack.length - 1]
+        if (effect) {
+            let depMap = targetMap.get(key)
+            if (!depMap) {
+                depMap = new Map()
+                targetMap.set(target, depMap)
+            }
+            let deps = depMap.get(key)
+            if (!deps) {
+                deps = new Set()
+                depMap.set(key, deps)
+            }
+            deps.add(effect)
+        }
+    }
+    //依赖触发
+    const trigger = (target, key) => {
+        const depMap = targetMap.get(target)
+        if (!depMap) {
+            return
+        }
+        const deps = depMap.get(key)
+        if (deps) {
+            deps.forEach(effect => {
+                effect()
+            })
+        }
+
+    }
+
+    const state = reactive({
+        name: 'zs',
+        age: 19,
+        foo: {
+            bar: 'bar'
+        }
+    })
+    //
+    //
+    // let str
+    // setInterval(() => {
+    //     str = Math.random()
+    //     console.log(str);
+    // }, 500)
+    // watchEffect(() => {
+    //     state.name = str
+    // })
+
+    watchEffect(() => {
+        console.log(state.age)
+    })
+    // -> logs 0
+
+    setInterval(() => {
+        state.age++
+        // -> logs 1
+    }, 1000)
+</script>
+</body>
+</html>
